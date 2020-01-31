@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+ 	<!-- id唯一标识符 -->
+ 	<bean id ="student" class="org.lanqiao.entity.Student"> 
+ 			<property name="stuNo" value="2"></property>
+ 			<property name="stuName" value="ls"></property>
+ 			<property name="stuAge" value="23"></property>
+ 	</bean>
+ 	
+ 	<bean id="javaCourse" class="org.lanqiao.newinstance.JavaCourse"></bean>
+ 	
+ 	<bean id="htmlCourse" class="org.lanqiao.newinstance.HtmlCourse"></bean>
+ 	
+ 	
+ 	<!-- 1.通过set方法赋值 -->
+ 	
+ 	<!-- 如果有s说明该类已经在ioc中有了 -->
+ 	
+ 	<!-- xx.setName
+ 		 xx.setHour
+ 	 -->
+ 	 
+ 	 <!-- 
+ 	<bean id="course" class="org.lanqiao.entity.Course">
+ 		<property name="courseName" value="java"></property>
+ 		<property name="courseHour" value="200"></property>
+ 		<property name="teacher" ref="teacher"></property>
+ 	</bean>
+ 	
+ 	<bean id="teacher" class="org.lanqiao.entity.Teacher">
+ 		<property name="name" value="zs"></property>
+ 		<property name="age" value="32"></property>
+ 	</bean>
+ 	
+ 	 -->
+ 	 
+ 	<!-- 2. 通过构造器赋值-->
+	<!--  	<bean id="course" class="org.lanqiao.entity.Course">
+ 		<constructor-arg value="c"></constructor-arg>
+ 		<constructor-arg value="200"></constructor-arg>
+ 		<constructor-arg ref="teacher"></constructor-arg>	
+ 	</bean>
+ 	
+ 	 <bean id="teacher" class="org.lanqiao.entity.Teacher">
+ 	 	<constructor-arg value="ls"></constructor-arg>
+ 	 	<constructor-arg value="24"></constructor-arg>
+ 	 </bean> -->
+ 	
+ 	<!-- 3.通过p值来赋值 -->
+ 	
+ 	<!--  
+ 	<bean id ="teacher" class="org.lanqiao.entity.Teacher" p:age="25" p:name="www"></bean>
+ 	
+ 	<bean id="course" class="org.lanqiao.entity.Course" p:courseHour="200" p:courseName="dashuju" p:teacher-ref="teacher"></bean>
+ 	-->
+ 	
+ 	<!-- 名字和标签没有必然关系 -->
+ 	<bean id="collectionDemo" class="org.lanqiao.entity.AllCollectionType">
+ 		<property name="list">
+ 				<list>
+ 						<value>football</value>
+ 						<value>basketball</value>
+ 						<value>ping-pong</value>
+ 				</list>
+ 		</property>
+ 		
+ 		<property name="array">
+ 			<array><value>篮球</value></array>
+ 		</property>
+ 		
+ 		<property name="set">
+ 			<set><value>乒乓起</value></set>
+ 		</property>
+ 		
+ 		<property name="map">
+ 			<map>
+ 				<entry>
+ 					<key><value>foot</value></key>
+ 					<value>足球</value>
+ 				</entry>
+ 			</map>
+ 		</property >
+ 	</bean>
+ 	
+ 	
+ 	
+</beans>

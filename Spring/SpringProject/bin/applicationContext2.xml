@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	 <!--  id唯一标识符-->
+ 	<bean id ="student" class="org.lanqiao.entity.Student"> 
+ 			<property name="stuNo" value="2"></property>
+ 			<property name="stuName" value="ls"></property>
+ 			<property name="stuAge" value="23"></property>
+ 	</bean>
+ 	
+ 	<bean id="javaCourse" class="org.lanqiao.newinstance.JavaCourse"></bean>
+ 	
+ 	<bean id="htmlCourse" class="org.lanqiao.newinstance.HtmlCourse"></bean>
+ 	
+ 	<bean id ="teacher" class="org.lanqiao.entity.Teacher" p:age="25" p:name="www"></bean>
+	
+	<bean id="course" class="org.lanqiao.entity.Course" p:courseHour="200" p:courseName="dashuju" p:teacher-ref="teacher"></bean>
+
+</beans>
